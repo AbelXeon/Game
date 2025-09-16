@@ -1,0 +1,97 @@
+[gd_scene load_steps=8 format=3 uid="uid://bpeep275ndy4e"]
+
+[ext_resource type="FontFile" uid="uid://8gmptfbj6hc8" path="res://assets/font/Deutsch.ttf" id="1_1ucvn"]
+[ext_resource type="Script" uid="uid://ddkuhw3d7y6xx" path="res://Scripte/player_hud.gd" id="1_kf01d"]
+[ext_resource type="Texture2D" uid="uid://din0hl0gad1dg" path="res://icon.svg" id="2_kf01d"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qsydm"]
+bg_color = Color(0.00482738, 0.016127, 0.00411545, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 36
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 36
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2hfnu"]
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gcdge"]
+bg_color = Color(0.960784, 0.0509804, 0, 0.952941)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v2r6d"]
+bg_color = Color(0.0156863, 0.952941, 0.0313726, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="PlayerHUD" type="CanvasLayer"]
+script = ExtResource("1_kf01d")
+
+[node name="playerinfo" type="Panel" parent="."]
+offset_left = 84.0
+offset_top = 32.0
+offset_right = 367.0
+offset_bottom = 119.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qsydm")
+
+[node name="avater" type="Panel" parent="playerinfo"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -69.0
+offset_top = -42.5
+offset_right = 25.0
+offset_bottom = 42.5
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2hfnu")
+
+[node name="TextureRect" type="TextureRect" parent="playerinfo/avater"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_kf01d")
+expand_mode = 1
+
+[node name="HealthBar" type="ProgressBar" parent="playerinfo"]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 49.0
+offset_right = 269.0
+offset_bottom = 76.0
+theme_override_styles/background = SubResource("StyleBoxFlat_gcdge")
+theme_override_styles/fill = SubResource("StyleBoxFlat_v2r6d")
+value = 50.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="playerinfo"]
+layout_mode = 0
+offset_left = 34.0
+offset_top = 7.0
+offset_right = 144.0
+offset_bottom = 32.0
+text = "Player Name:"
+
+[node name="playername" type="Label" parent="playerinfo"]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 7.0
+offset_right = 198.0
+offset_bottom = 39.0
+theme_override_fonts/font = ExtResource("1_1ucvn")
+theme_override_font_sizes/font_size = 29
+text = "Abel"

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://udxyk3jrt36c"]
+
+[ext_resource type="Script" uid="uid://bcs1jrpiuq256" path="res://Scripte/animal_spawner.gd" id="1_7pl56"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b3y1w"]
+
+[node name="AnimalSpawner" type="Node2D"]
+script = ExtResource("1_7pl56")
+
+[node name="SpawnArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SpawnArea"]
+shape = SubResource("RectangleShape2D_b3y1w")
+
+[node name="SpawnTimer" type="Timer" parent="."]

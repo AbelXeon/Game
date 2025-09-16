@@ -1,0 +1,82 @@
+[gd_scene load_steps=12 format=3 uid="uid://2quxxe2jcd8d"]
+
+[ext_resource type="Texture2D" uid="uid://dikevp2tirpuu" path="res://assets/Tiny Swords (Free Pack)/Decorations/Trees/Tree2.png" id="1_l0rin"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yn853"]
+atlas = ExtResource("1_l0rin")
+region = Rect2(0, 0, 192, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cym5n"]
+atlas = ExtResource("1_l0rin")
+region = Rect2(192, 0, 192, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_77np4"]
+atlas = ExtResource("1_l0rin")
+region = Rect2(384, 0, 192, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fi44d"]
+atlas = ExtResource("1_l0rin")
+region = Rect2(576, 0, 192, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_87qaw"]
+atlas = ExtResource("1_l0rin")
+region = Rect2(768, 0, 192, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_odfgc"]
+atlas = ExtResource("1_l0rin")
+region = Rect2(960, 0, 192, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k0at3"]
+atlas = ExtResource("1_l0rin")
+region = Rect2(1152, 0, 192, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fdnkg"]
+atlas = ExtResource("1_l0rin")
+region = Rect2(1344, 0, 192, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8n6ag"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yn853")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cym5n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_77np4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fi44d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_87qaw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_odfgc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k0at3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fdnkg")
+}],
+"loop": true,
+"name": &"idel",
+"speed": 8.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l0rin"]
+radius = 15.2971
+
+[node name="green_tree" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8n6ag")
+animation = &"idel"
+autoplay = "idel"
+frame_progress = 0.37672
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 98)
+shape = SubResource("CircleShape2D_l0rin")

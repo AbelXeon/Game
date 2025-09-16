@@ -1,0 +1,117 @@
+[gd_scene load_steps=6 format=3 uid="uid://di8cvr5obdto4"]
+
+[ext_resource type="Texture2D" uid="uid://dbyhcmqfl5gkv" path="res://medical-pack.svg" id="1_20xco"]
+[ext_resource type="Texture2D" uid="uid://b7gyxd6l8hgov" path="res://two-coins.svg" id="2_l7dqm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m6dxm"]
+bg_color = Color(0.211387, 0.324639, 0.813868, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4k4du"]
+bg_color = Color(0.152476, 0.152476, 0.152476, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kag2x"]
+bg_color = Color(0.94902, 0.627451, 0.152941, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="player info" type="Panel" parent="."]
+layout_mode = 1
+offset_right = 352.0
+offset_bottom = 140.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_m6dxm")
+
+[node name="avater" type="Panel" parent="player info"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 11.0
+offset_top = -53.5
+offset_right = 134.0
+offset_bottom = 48.5
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4k4du")
+
+[node name="TextureRect" type="TextureRect" parent="player info/avater"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_20xco")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="player info"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -31.0
+offset_top = -35.0
+offset_right = 34.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+text = "Health"
+
+[node name="gold" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -352.0
+offset_bottom = 128.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_kag2x")
+
+[node name="avater" type="Panel" parent="gold"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 11.0
+offset_top = -53.5
+offset_right = 134.0
+offset_bottom = 48.5
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4k4du")
+
+[node name="TextureRect" type="TextureRect" parent="gold/avater"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_l7dqm")
+expand_mode = 1
